@@ -1,5 +1,4 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-
 import Auth from '../utils/auth';
 import { login } from "../api/authAPI";
 
@@ -9,7 +8,7 @@ const Login = () => {
     password: ''
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setLoginData({
       ...loginData,
@@ -19,11 +18,13 @@ const Login = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    console.log('Login Data:', JSON.stringify(loginData)); // Log the login data
     try {
-      const data = await login(loginData);
-      Auth.login(data.token);
+      const response = await login(loginData); // Use the imported login function
+      console.log('Login Response:', response); // Log the response
+      Auth.login(response.token); // Store the token
     } catch (err) {
-      console.error('Failed to login', err);
+      console.error('Login failed:', err);
     }
   };
 
@@ -31,14 +32,14 @@ const Login = () => {
     <div className='container'>
       <form className='form' onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <label >Username</label>
+        <label>Username</label>
         <input 
           type='text'
           name='username'
           value={loginData.username || ''}
           onChange={handleChange}
         />
-      <label>Password</label>
+        <label>Password</label>
         <input 
           type='password'
           name='password'
@@ -48,7 +49,6 @@ const Login = () => {
         <button type='submit'>Submit Form</button>
       </form>
     </div>
-    
   )
 };
 

@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
     if (!city) return res.status(400).json({ error: 'City name is required' });
 
     // Retrieve weather data from WeatherService
-    const weatherData = await WeatherService.getWeather(city);
+    const weatherData = await WeatherService.getWeatherForCity(city);
     if (!weatherData) return res.status(404).json({ error: 'Weather data not found' });
     // TODO: save city to search history
     await HistoryService.addCity(city)
@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 });
 
 // TODO: GET search history
-router.get('/history', async (req, res) => {
+router.get('/history', async (_, res) => {
   try {
     const cities = await HistoryService.getCities();
     return res.status(200).json({ history: cities });
