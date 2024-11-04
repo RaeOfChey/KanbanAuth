@@ -10,7 +10,7 @@ import routes from './routes/index.js';
 import { sequelize } from './models/index.js';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = parseInt(process.env.PORT || '3001', 10);
 
 // Enable CORS for all routes
 app.use(cors());
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(routes);
 
 sequelize.sync({force: forceDatabaseRefresh}).then(() => {
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is listening on port ${PORT}`);
   });
 });
