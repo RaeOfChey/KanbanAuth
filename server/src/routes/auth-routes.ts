@@ -8,7 +8,7 @@ export const login = async (req: Request, res: Response) => {
   console.log(`Attempting login for username: ${username}`); // Log the username being used for login
   console.log(`Request Body: ${JSON.stringify(req.body)}`); // Log the request body
 
-  try {
+  try { 
     const user = await User.findOne({ where: { username } });
     console.log(`User found: ${user ? user.username : 'none'}`); // Log if the user was found
 
