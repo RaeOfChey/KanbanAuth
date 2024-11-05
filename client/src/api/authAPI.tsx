@@ -2,7 +2,7 @@ import { UserLogin } from "../interfaces/UserLogin";
 import Auth from "../utils/auth";
 
 // Define the base URL based on environment variables or default to localhost for development
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 const login = async (userInfo: UserLogin) => {
   try {
