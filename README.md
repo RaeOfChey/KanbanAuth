@@ -19,12 +19,26 @@
 ## Description
 KanbanAuth is a secure task management application where users can view, add, and organize tasks using a Kanban board layout. This application incorporates authentication using JSON Web Tokens (JWT), ensuring that only authorized users can access their tasks and perform actions. Users can log in with a username and password, and the application securely stores JWT tokens to manage sessions. Built with a full-stack React environment, this project is deployed on Render for ease of access.
 
+To view the application, simply navigate to the live website at https://kanbanauth.onrender.com.
+
+<img width="640" alt="KanbanAuth - Login Page" src="https://github.com/user-attachments/assets/bdad4c4f-9c7e-4e18-942a-745bf4cde078">
+
+Example of Login Page
+
 ## Features
 - Secure login page with JWT-based authentication for user verification.
 - Access control to the Kanban board, ensuring only authenticated users can manage tasks.
 - Store JWT tokens securely in localStorage for seamless session management.
 - Auto-logout and token invalidation after a period of inactivity to enhance security.
 - User-friendly interface with a Kanban board layout for sorting tasks by status.
+
+<img width="640" alt="KanbanAuth - New Ticket Page" src="https://github.com/user-attachments/assets/ccfa9e5c-e044-4826-b3cb-fd02d4b8a955">
+
+Example of New Ticket
+
+<img width="640" alt="KanbanAuth - Ticket Board" src="https://github.com/user-attachments/assets/b00a46bb-d336-446d-8739-fc8755662df4">
+
+Example of Kanban Board
 
 ## Installation
 To use the application, follow these steps:
