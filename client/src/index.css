@@ -10,6 +10,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 30px;
 }
 
 /* webkit solution */
@@ -28,16 +33,15 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #CFB8FF;
 }
 
 body {
-  background: #ECF0F1;
+  background: #ffffff;
   background-size: cover;
   background-repeat: no-repeat no-repeat;
-  background-position: center center;
+  background-position: center;
   margin: 0;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -49,18 +53,21 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 0.1em solid #fff;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #000;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border: 0.1em solid black;
+  background-color: #CFB8FF;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -81,13 +88,13 @@ tr {
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #333333;
+  background-color: #000000;
 }
 
 /* Navbar Content */
 .nav {
   display: flex;
-  padding: 1em 2em;
+  padding: 25px 50px;
 }
 
 .nav ul {
@@ -105,7 +112,11 @@ tbody tr:nth-child(odd) {
 }
 
 .nav-title a {
-  color: #b864c4;
+  color: #000000;
+}
+
+.nav-title a:hover {
+  color: #CFB8FF;
 }
 
 .nav-item {
@@ -130,10 +141,12 @@ tbody tr:nth-child(odd) {
 
 .board {
   width: 100%;
+  padding: 25px 50px;
 }
 
 .board-display {
   display: flex;
+  margin-top: 50px;
 }
 
 .swim-lane {
@@ -141,62 +154,69 @@ tbody tr:nth-child(odd) {
   font-weight: 500;
   width: 33%;
   height: 90vh; 
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 5px;
-  padding: 5px;
+  border-radius: 5px;
+  border: 0.1em solid black;
+  padding: 15px;
+  margin-right: 25px;
+}
+
+.swim-lane:last-child {
+  margin-right: 0; /* Remove the right margin from the last ticket card */
 }
 
 .todo {
-  background-color: #e9cbec;
+  background-color: #D9D9D9;
 }
 
 .inprogress {
-  background-color: #b864c4;
+  background-color: #FF6F61;
 }
 
 .done {
-  background-color: #732381;
+  background-color: #6EDDA2;
 }
 
 .ticket-card {
   text-align: left;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 15px;
   margin-bottom: 10px;
-  border-radius: 4px;
+  border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border: 0.1em solid black;
 }
 
 .container {
-  /* margin: auto; */
   width: 100%;
-  /* height: 90%; */
 }
 
 #create-ticket-link {
   display: block;
-  margin-left: auto;
+  margin: 0 auto;
 }
-
 
 .form {
   width: 60%;
   height: 80%;
-  background-color: #b864c4;
+  background-color: #CFB8FF;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  border: #CFB8FF;
 }
 
 .form > h1, .form > label {
-  color: yellow;
+  color: #000000;
 }
 
 .form > input {
   width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  border: 0.1em solid #000;
   
 }
 
@@ -206,33 +226,55 @@ tbody tr:nth-child(odd) {
 }
 
 .form button {
-  margin-top: 2.5%;
+  margin-top: 50px;
+  background-color: #D9D9D9;
+  border: 0.1em solid #000;
+}
+
+.form button:hover {
+  border: 0.1em solid black;
+  background-color: #fff;
 }
 
 .form textarea {
   resize: both;
   min-height: 30px;
   min-width: 30px;
+  font-family: 'Inter Tight', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .editBtn {
-  background-color: #f9f9f9;
+  background-color: #D9D9D9;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-right: 25px;
+  border: 0.1em solid #fff;
+}
+
+.editBtn:hover {
+  border: 0.1em solid black;
+  background-color: #CFB8FF;
 }
 
 .deleteBtn {
-  background-color: #f9f9f9;
+  background-color: #D9D9D9;
   font-weight: 500;
   color: black;
   text-decoration: inherit;
+  border: 0.1em solid #fff;
+  margin-left: auto;
 }
 
 .deleteBtn:hover {
-  color: #535bf2;
+  border: 0.1em solid black;
 }
 
 .login-notice {
@@ -249,9 +291,9 @@ tbody tr:nth-child(odd) {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #000000;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #D9D9D9;
   }
 }
