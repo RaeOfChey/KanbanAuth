@@ -3,6 +3,7 @@ import Auth from "../utils/auth";
 
 // Define the base URL based on environment variables or default to localhost for development
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+console.log('API Base URL:', API_BASE_URL);
 
 const login = async (userInfo: UserLogin) => {
   try {
